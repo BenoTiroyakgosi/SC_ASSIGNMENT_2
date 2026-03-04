@@ -1,5 +1,9 @@
 project:
   title: "SC_ASSIGNMENT_2"
-
+  type: website
+  output-dir: _book
+  render: 
+    - SC_ASSIGNMENT_2.qmd
+  
 editor: visual
 
