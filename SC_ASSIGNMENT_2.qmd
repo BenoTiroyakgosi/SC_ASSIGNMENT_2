@@ -171,37 +171,7 @@ print(max_values)
 
 # Question 5
 
-Using parLapply
 
-```{r}
-library(parallel)
-library(iterators)
-
-
-
-cl <- makeCluster(2)
-clusterSetRNGStream(cl, 1234)  # ensure reproducibility
-
-# Load iterators package on workers
-clusterEvalQ(cl, library(iterators))
-
-it_p <- irnorm(5, count = 3)
-
-# Export iterator to workers
-clusterExport(cl, "it")
-
-system.time({
-  
-  max_values_parlapply <- parLapply(cl, 1:3, function(i){
-    v <- nextElem(it)
-    max(v)
-  })
-})
-stopCluster(cl)
-
-# Flatten the list
-max_values_parlapply <- unlist(max_values_parlapply)
-```
 
 
 
