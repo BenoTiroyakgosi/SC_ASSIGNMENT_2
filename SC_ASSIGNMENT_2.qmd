@@ -1,6 +1,9 @@
 ---
 title: "SC_ASSIGNMENT_2"
+
+
 ---
+## Name : Beno Tiroyakgosi 
 
 # Question 1
 
@@ -218,4 +221,4 @@ system.time(
 ```
 
 
-Using parLapply takes longer for small problems
+

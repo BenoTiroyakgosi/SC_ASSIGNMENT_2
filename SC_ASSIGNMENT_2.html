@@ -98,6 +98,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<section id="name-beno-tiroyakgosi" class="level2">
+<h2 class="anchored" data-anchor-id="name-beno-tiroyakgosi">Name : Beno Tiroyakgosi</h2>
+</section>
 <section id="question-1" class="level1">
 <h1>Question 1</h1>
 <div class="cell">
@@ -151,7 +154,7 @@ result.6 0.9911927 0.9817826</code></pre>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
-   5.90    0.31    6.26 </code></pre>
+   6.00    0.30    6.37 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">"The bootsrap median estimate under serial processing is "</span>, <span class="fu">round</span>(<span class="fu">mean</span>(vec_median), <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -180,7 +183,7 @@ result.6 0.9911927 0.9817826</code></pre>
 <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
-  24.12    7.02   37.36 </code></pre>
+  25.21    7.36   38.78 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">"Parallel: 1 iteration per task median is "</span>, <span class="fu">round</span>(<span class="fu">median</span>(results), <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -211,7 +214,7 @@ result.6 0.9911927 0.9817826</code></pre>
 <span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
-   0.07    0.03    3.19 </code></pre>
+   0.02    0.01    2.93 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stopCluster</span>(cl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -257,7 +260,7 @@ result.6 0.9911927 0.9817826</code></pre>
 <span id="cb20-35"><a href="#cb20-35" aria-hidden="true" tabindex="-1"></a>coverage_estimate <span class="ot">&lt;-</span> <span class="fu">mean</span>(coverage_results)</span>
 <span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a>coverage_estimate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.93</code></pre>
+<pre><code>[1] 0.95</code></pre>
 </div>
 </div>
 </section>
@@ -294,7 +297,7 @@ result.6 0.9911927 0.9817826</code></pre>
       0       0       0 </code></pre>
 </div>
 </div>
-<p>Using for each</p>
+<p>Using foreach</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>it_f <span class="ot">&lt;-</span> <span class="fu">irnorm</span>(<span class="dv">5</span>, <span class="at">count =</span> <span class="dv">3</span>)</span>
@@ -309,6 +312,7 @@ result.6 0.9911927 0.9817826</code></pre>
       0       0       0 </code></pre>
 </div>
 </div>
+<p>Using parLapply</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>cl <span class="ot">&lt;-</span> <span class="fu">makeCluster</span>(<span class="dv">2</span>)</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -320,7 +324,7 @@ result.6 0.9911927 0.9817826</code></pre>
 <span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
-   0.00    0.00    0.02 </code></pre>
+   0.00    0.00    0.01 </code></pre>
 </div>
 </div>
 </section>
